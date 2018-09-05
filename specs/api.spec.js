@@ -16,7 +16,7 @@ describe('Healthcheck API', () => {
         .set('Content-Type', 'application/json')
         .end(function(err, res) 
         {
-            res.status.should.equal(200)
+            assert.strictEqual(res.statusCode, 200);
             done()
         })
     });
