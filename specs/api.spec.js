@@ -5,12 +5,12 @@ var request = require('superagent');
 let fs = require('fs');
 let expected = require('../testdata/expectedData.json');
 let input = require('../testdata/inputData.json');
-const key = fs.readFileSync('./testdata/tara_tele2_nl.key');
-const cert = fs.readFileSync('./testdata/tara_tele2_nl.crt');
+const key = fs.readFileSync('./testdata/xxxx.key');
+const cert = fs.readFileSync('./testdata/xxxx.crt');
 
-describe('Healthcheck Tara API', () => {
+describe('Healthcheck API', () => {
     
-    test('Healthcheck Tara API', done => {
+    test('GET API test', done => {
         request
         .get(config.baseURL+'health')
         .set('Content-Type', 'application/json')
@@ -21,16 +21,16 @@ describe('Healthcheck Tara API', () => {
         })
     });
 
-    test('Verify Tara API response', done => {
+    test('POST API test', done => {
         request
       .post(config.baseURL+'v1/messages')
       .set('Content-Type', 'application/json')
       .key(key)
       .cert(cert)
-      .send(input.testTara)
+      .send(input.testText)
       .end((err, res) => {
         assert.ifError(err);
-        assert.deepStrictEqual(res.body, expected.taraResponse);
+        assert.deepStrictEqual(res.body, expected.aResponse);
         done();
       })
     })
