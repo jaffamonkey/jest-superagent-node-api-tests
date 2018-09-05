@@ -1,6 +1,6 @@
 {
-    "testText": {
-        "text": "hello"
+    "createUser": {
+        "name": "jaffamonkey",
+        "job": "monkey business"
     }
-
 }

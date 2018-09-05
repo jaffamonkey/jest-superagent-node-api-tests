@@ -5,8 +5,8 @@ var request = require('superagent');
 let fs = require('fs');
 let expected = require('../testdata/expectedData.json');
 let input = require('../testdata/inputData.json');
-const key = fs.readFileSync('./testdata/xxxx.key');
-const cert = fs.readFileSync('./testdata/xxxx.crt');
+// const key = fs.readFileSync('./testdata/xxxx.key');
+// const cert = fs.readFileSync('./testdata/xxxx.crt');
 
 describe('Healthcheck API', () => {
     
@@ -23,14 +23,14 @@ describe('Healthcheck API', () => {
 
     test('POST API test', done => {
         request
-      .post(config.baseURL+'v1/messages')
+      .post(config.baseURL+'users')
       .set('Content-Type', 'application/json')
-      .key(key)
-      .cert(cert)
-      .send(input.testText)
-      .end((err, res) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(res.body, expected.aResponse);
+      .send(input.createUser)
+      .end(function(err, res)
+      {
+        assert.strictEqual(res.statusCode, 201);
+        assert.equal(res.job, expected.job);
+        assert.equal(res.name, expected.name);
         done();
       })
     })
