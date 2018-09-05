@@ -12,7 +12,7 @@ describe('Healthcheck API', () => {
     
     test('GET API test', done => {
         request
-        .get(config.baseURL+'health')
+        .get(config.baseURL+'users')
         .set('Content-Type', 'application/json')
         .end(function(err, res) 
         {
