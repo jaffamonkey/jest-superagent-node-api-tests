@@ -1,0 +1,37 @@
+{
+    "name": "supertest_jest",
+    "version": "1.0.0",
+    "description": "This is a API testing framework using Supertest and Jest",
+    "main": "index.js",
+    "scripts": {
+        "test": "./node_modules/.bin/jest specs/"
+    },
+    "author": "Paul Littlebury",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "23.5.0",
+        "jest-cli": "23.5.0",
+        "jest-html-reporter": "2.4.2",
+        "superagent": "3.8.3",
+        "superagent-retry": "0.6.0",
+        "should": "13.2.3",
+        "fs": "0.0.1-security"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "testPathIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "reporters": [
+            "default",
+            [
+                "./node_modules/jest-html-reporter",
+                {
+                    "pageTitle": "API Test Report",
+                    "outputPath": "report/index.html",
+                    "includeFailureMsg": true
+                }
+            ]
+        ]
+    }
+}
