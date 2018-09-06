@@ -1,6 +1,5 @@
 const config = require('../config/config.json');
 const assert = require('assert');
-const should = require('should');
 var request = require('superagent');
 let fs = require('fs');
 let expected = require('../testdata/expectedData.json');
@@ -13,6 +12,8 @@ describe('Healthcheck API', () => {
     test('GET API test', done => {
         request
         .get(config.baseURL+'users')
+//      .key(key)
+//      .cert(cert)
         .set('Content-Type', 'application/json')
         .end(function(err, res) 
         {
@@ -24,6 +25,8 @@ describe('Healthcheck API', () => {
     test('POST API test', done => {
         request
       .post(config.baseURL+'users')
+//    .key(key)
+//    .cert(cert)
       .set('Content-Type', 'application/json')
       .send(input.createUser)
       .end(function(err, res)
