@@ -6,6 +6,8 @@ This is a framework with Supertest and Jest for testing Restful services
 
 ```
 npm install
+npm install -g eslint
+npm install -g eslint-plugin-jsdoc
 ```
 
 ## Running the tests

@@ -4,18 +4,23 @@
     "description": "This is a API testing framework using Supertest and Jest",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/.bin/jest specs/"
+        "test": "./node_modules/.bin/jest specs/",
+        "lint": "eslint -c config/.eslintrc specs",
+        "lint-fix": "eslint -c config/.eslintrc specs"
     },
     "author": "Paul Littlebury",
     "license": "MIT",
     "devDependencies": {
+        "eslint": "5.5.0",
+        "eslint-plugin-jest": "latest",
+        "eslint-plugin-jsdoc": "latest",
+        "fs": "latest",
         "jest": "23.5.0",
         "jest-cli": "23.5.0",
         "jest-html-reporter": "2.4.2",
-        "superagent": "3.8.3",
-        "superagent-retry": "0.6.0",
         "should": "13.2.3",
-        "fs": "0.0.1-security"
+        "superagent": "3.8.3",
+        "superagent-retry": "0.6.0"
     },
     "jest": {
         "testEnvironment": "node",
