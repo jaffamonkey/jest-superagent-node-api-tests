@@ -4,8 +4,8 @@ var request = require("superagent");
 let fs = require("fs");
 let expected = require("../testdata/expectedData.json");
 let input = require("../testdata/inputData.json");
-const key = fs.readFileSync("./testdata/tara_tele2_nl.key");
-const cert = fs.readFileSync("./testdata/tara_tele2_nl.crt");
+const key = fs.readFileSync("./testdata/{key}.key");
+const cert = fs.readFileSync("./testdata/{crt}.crt");
 
 describe("API checks", () => {
     
