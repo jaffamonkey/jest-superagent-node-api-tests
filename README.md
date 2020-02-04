@@ -3,7 +3,6 @@
 This is a framework with Supertest and Jest for testing Restful services
 
 ## Prerequisites
-
 ```
 npm install
 npm install -g eslint
